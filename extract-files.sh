@@ -1,3 +1,4 @@
+
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
@@ -24,9 +25,9 @@ VENDOR=motorola
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-CM_ROOT="$MY_DIR"/../../..
+VALIDUS_ROOT="$MY_DIR"/../../..
 
-HELPER="$CM_ROOT"/vendor/lineage/tools/extract_utils.sh
+HELPER="$VALIDUS_ROOT"/vendor/validus/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -50,7 +51,7 @@ else
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+setup_vendor "$DEVICE" "$VENDOR" "$VALIDUS_ROOT"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
